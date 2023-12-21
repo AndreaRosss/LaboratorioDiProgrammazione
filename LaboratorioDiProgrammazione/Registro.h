@@ -8,7 +8,7 @@ class Registro
 	multimap <int, Attività*> registro;
 
 public:
-	Registro(){}
+	Registro();
 
 	void AggiungiAttività();
 };
