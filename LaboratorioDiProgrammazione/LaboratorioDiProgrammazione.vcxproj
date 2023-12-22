@@ -143,12 +143,14 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="AggiungiAttivitàFrame.h" />
     <ClInclude Include="App.h" />
     <ClInclude Include="Attività.h" />
     <ClInclude Include="MainFrame.h" />
     <ClInclude Include="Registro.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="AggiungiAttivitàFrame.cpp" />
     <ClCompile Include="App.cpp" />
     <ClCompile Include="Attività.cpp" />
     <ClCompile Include="MainFrame.cpp" />
