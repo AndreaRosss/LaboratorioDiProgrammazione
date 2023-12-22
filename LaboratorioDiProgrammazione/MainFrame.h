@@ -5,5 +5,7 @@ class MainFrame : public wxFrame
 {
 public:
 	MainFrame(const wxString& title);
+private:
+	void ApriFrameAggiungiAttività(wxCommandEvent& evt);
 };
 
