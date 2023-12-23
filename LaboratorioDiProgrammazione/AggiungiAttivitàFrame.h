@@ -25,6 +25,7 @@ private:
 	wxTextCtrl* SezioneDescrizione;
 	wxButton* aggiungiAttività;
 
+	Registro* registro;
 
 	void AggiungiAttività();
 };

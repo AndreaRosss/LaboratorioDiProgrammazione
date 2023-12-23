@@ -10,6 +10,6 @@ class Registro
 public:
 	Registro();
 
-	void AggiungiAttività();
+	void AggiungiAttività(Attività* attività);
 };
 

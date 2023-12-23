@@ -24,6 +24,8 @@ AggiungiAttivitàFrame::AggiungiAttivitàFrame(Registro* registro) : wxFrame(nullp
 
 	aggiungiAttività = new wxButton(panel, wxID_ANY, "Aggiungi Attività", wxPoint(225, 300), wxSize(150, -1));
 
+	this->registro = registro;
+
 }
 
 void AggiungiAttivitàFrame::AggiungiAttività(){
@@ -52,6 +54,7 @@ void AggiungiAttivitàFrame::AggiungiAttività(){
 
 	//crea Attività con i dati estratti, necessario modificare costruttore.
 	Attività* attività = new Attività(desc, stoi(a), orai, oraf);
+	registro->AggiungiAttività(attività);
 
 }
 
