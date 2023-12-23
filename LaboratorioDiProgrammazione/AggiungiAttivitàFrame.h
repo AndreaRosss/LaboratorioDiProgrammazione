@@ -4,5 +4,7 @@ class AggiungiAttivit‡Frame : public wxFrame
 {
 public: 
 	AggiungiAttivit‡Frame();
+private:
+	void AggiungiAttivit‡(){}
 };
 
