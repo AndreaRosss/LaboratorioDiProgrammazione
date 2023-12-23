@@ -3,26 +3,59 @@
 #include <wx/calctrl.h>
 #include <wx/datectrl.h>
 #include <wx/timectrl.h>
-
+#include <wx/datetime.h>
 #include <string>
 using namespace std;
 
-AggiungiAttivitàFrame::AggiungiAttivitàFrame() : wxFrame(nullptr, wxID_ANY, "Aggiungi Attività") {
-	wxPanel* panel = new wxPanel(this);
+AggiungiAttivitàFrame::AggiungiAttivitàFrame(Registro& registro) : wxFrame(nullptr, wxID_ANY, "Aggiungi Attività") {
+	panel = new wxPanel(this);
 
-	wxStaticText* campo2 = new wxStaticText(panel, wxID_ANY, "Data:", wxPoint(10, 10), wxSize(100, 100));
-	wxDatePickerCtrl* Data = new wxDatePickerCtrl(panel, wxID_ANY, wxDefaultDateTime, wxPoint(50, 10), wxDefaultSize, 4L);
+	campo1 = new wxStaticText(panel, wxID_ANY, "Data:", wxPoint(10, 10), wxSize(100, 100));
+	Data = new wxDatePickerCtrl(panel, wxID_ANY, wxDefaultDateTime, wxPoint(50, 10), wxDefaultSize, 4L);
 
-	wxStaticText* campo3 = new wxStaticText(panel, wxID_ANY, "OraInizio:", wxPoint(200, 10), wxSize(100, 100));
-	wxTimePickerCtrl* oraInizio = new wxTimePickerCtrl(panel, wxID_ANY, wxDefaultDateTime, wxPoint(250, 10), wxDefaultSize, 0L);
+	campo2 = new wxStaticText(panel, wxID_ANY, "OraInizio:", wxPoint(200, 10), wxSize(100, 100));
+	oraInizio = new wxTimePickerCtrl(panel, wxID_ANY, wxDefaultDateTime, wxPoint(250, 10), wxDefaultSize, 0L);
 
-	wxStaticText* campo4 = new wxStaticText(panel, wxID_ANY, "OraFine:", wxPoint(350, 10), wxSize(100, 100));
-	wxTimePickerCtrl* oraFine = new wxTimePickerCtrl(panel, wxID_ANY, wxDefaultDateTime, wxPoint(400, 10), wxDefaultSize, 0L);
+	campo3 = new wxStaticText(panel, wxID_ANY, "OraFine:", wxPoint(350, 10), wxSize(100, 100));
+	oraFine = new wxTimePickerCtrl(panel, wxID_ANY, wxDefaultDateTime, wxPoint(400, 10), wxDefaultSize, 0L);
 
-	wxStaticText* campo1 = new wxStaticText(panel, wxID_ANY, "Descrizione:", wxPoint(10, 50), wxSize(100, 100));
-	wxTextCtrl* SezioneDescrizione = new wxTextCtrl(panel, wxID_ANY, "", wxPoint(10, 75), wxSize(580, 150));
+	campo4 = new wxStaticText(panel, wxID_ANY, "Descrizione:", wxPoint(10, 50), wxSize(100, 100));
+	SezioneDescrizione = new wxTextCtrl(panel, wxID_ANY, "", wxPoint(10, 75), wxSize(580, 150));
 
-	wxButton* aggiungiAttività = new wxButton(panel, wxID_ANY, "Aggiungi Attività", wxPoint(225, 300), wxSize(150, -1));
+	aggiungiAttività = new wxButton(panel, wxID_ANY, "Aggiungi Attività", wxPoint(225, 300), wxSize(150, -1));
+
+}
+
+void AggiungiAttivitàFrame::AggiungiAttività(){
+	
+	//estrazione data
+	wxDateTime d = Data->GetValue();
+	string a = to_string(d.GetDay());
+	string b = to_string(d.GetMonth());
+	string c = to_string(d.GetYear());
+	a.append(b).append(c);
+	stoi(a);
+
+	//estrazione ora inizio
+	wxDateTime orainizio = oraInizio->GetValue();
+	string ora1 = to_string(orainizio.GetHour());
+	string minuto1 = to_string(orainizio.GetMinute());
+
+	//estrazione ora fine
+	wxDateTime orafine = oraFine->GetValue();
+	string ora2 = to_string(orafine.GetHour());
+	string minuto2 = to_string(orafine.GetMinute());
+
+	//estrazione Descrizione
+	string desc = SezioneDescrizione->GetValue().ToStdString();
+
+	//crea Attività con i dati estratti, necessario modificare costruttore.
+	
+
+
+
+
+
 
 }
 
