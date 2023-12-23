@@ -7,16 +7,12 @@ class Attività
 {
 	string Descrizione;
 	int Data;
-	int OraInizio;
-	int OraFine;
+	string OraInizio;
+	string OraFine;
 
 public:
-	Attività() {
-		cin >> Descrizione;
-		cin >> Data;
-		cin >> OraInizio;
-		cin >> OraFine;
-	}
+	Attività(string Descrizione, int Data, string OraInizio, string OraFine);
+		
 
 	int GetData() {
 		return this->Data;

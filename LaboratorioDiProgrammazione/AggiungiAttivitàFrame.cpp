@@ -7,7 +7,7 @@
 #include <string>
 using namespace std;
 
-AggiungiAttivitàFrame::AggiungiAttivitàFrame(Registro& registro) : wxFrame(nullptr, wxID_ANY, "Aggiungi Attività") {
+AggiungiAttivitàFrame::AggiungiAttivitàFrame(Registro* registro) : wxFrame(nullptr, wxID_ANY, "Aggiungi Attività") {
 	panel = new wxPanel(this);
 
 	campo1 = new wxStaticText(panel, wxID_ANY, "Data:", wxPoint(10, 10), wxSize(100, 100));
@@ -34,28 +34,24 @@ void AggiungiAttivitàFrame::AggiungiAttività(){
 	string b = to_string(d.GetMonth());
 	string c = to_string(d.GetYear());
 	a.append(b).append(c);
-	stoi(a);
 
 	//estrazione ora inizio
 	wxDateTime orainizio = oraInizio->GetValue();
 	string ora1 = to_string(orainizio.GetHour());
 	string minuto1 = to_string(orainizio.GetMinute());
+	string orai = ora1.append(minuto1);
 
 	//estrazione ora fine
 	wxDateTime orafine = oraFine->GetValue();
 	string ora2 = to_string(orafine.GetHour());
 	string minuto2 = to_string(orafine.GetMinute());
+	string oraf = ora2.append(minuto2);
 
 	//estrazione Descrizione
 	string desc = SezioneDescrizione->GetValue().ToStdString();
 
 	//crea Attività con i dati estratti, necessario modificare costruttore.
-	
-
-
-
-
-
+	Attività* attività = new Attività(desc, stoi(a), orai, oraf);
 
 }
 

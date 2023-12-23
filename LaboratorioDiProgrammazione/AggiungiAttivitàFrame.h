@@ -11,7 +11,7 @@ using namespace std;
 class AggiungiAttivit‡Frame : public wxFrame 
 {
 public: 
-	AggiungiAttivit‡Frame(Registro& registro);
+	AggiungiAttivit‡Frame(Registro* registro);
 private:
 
 	wxPanel* panel;

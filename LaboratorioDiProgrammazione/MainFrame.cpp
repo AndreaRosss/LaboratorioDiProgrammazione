@@ -11,11 +11,11 @@ MainFrame::MainFrame(const wxString& title) : wxFrame(nullptr, wxID_ANY, title) 
 
 	AggiungiAttività->Bind(wxEVT_BUTTON, &MainFrame::ApriFrameAggiungiAttività, this);
 
-	Registro* registro = new Registro();
+	registro = new Registro();
 }
 
 void MainFrame::ApriFrameAggiungiAttività(wxCommandEvent& evt)
-{
+{	
 	AggiungiAttivitàFrame* aaf = new AggiungiAttivitàFrame(registro);
 	aaf->SetClientSize(600, 400);
 	aaf->Center();
