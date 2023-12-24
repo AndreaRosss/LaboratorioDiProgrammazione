@@ -27,6 +27,6 @@ private:
 
 	Registro* registro;
 
-	void AggiungiAttività();
+	void AggiungiAttività(wxCommandEvent& evt);
 };
 

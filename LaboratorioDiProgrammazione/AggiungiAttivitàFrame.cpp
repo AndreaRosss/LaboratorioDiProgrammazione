@@ -23,12 +23,13 @@ AggiungiAttivitàFrame::AggiungiAttivitàFrame(Registro* registro) : wxFrame(nullp
 	SezioneDescrizione = new wxTextCtrl(panel, wxID_ANY, "", wxPoint(10, 75), wxSize(580, 150));
 
 	aggiungiAttività = new wxButton(panel, wxID_ANY, "Aggiungi Attività", wxPoint(225, 300), wxSize(150, -1));
+	aggiungiAttività->Bind(wxEVT_BUTTON, &AggiungiAttivitàFrame::AggiungiAttività, this);
 
 	this->registro = registro;
 
 }
 
-void AggiungiAttivitàFrame::AggiungiAttività(){
+void AggiungiAttivitàFrame::AggiungiAttività(wxCommandEvent& evt){
 	
 	//estrazione data
 	wxDateTime d = Data->GetValue();
