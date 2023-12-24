@@ -152,6 +152,7 @@
     <ClInclude Include="Attività.h" />
     <ClInclude Include="MainFrame.h" />
     <ClInclude Include="Registro.h" />
+    <ClInclude Include="SfogliaRegistroFrame.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="AggiungiAttivitàFrame.cpp" />
@@ -159,6 +160,7 @@
     <ClCompile Include="Attività.cpp" />
     <ClCompile Include="MainFrame.cpp" />
     <ClCompile Include="Registro.cpp" />
+    <ClCompile Include="SfogliaRegistroFrame.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
