@@ -11,5 +11,7 @@ public:
 private:
 	void ApriFrameAggiungiAttività(wxCommandEvent& evt);
 
+	void ApriFrameSfogliaRegistro(wxCommandEvent& evt);
+
 };
 
