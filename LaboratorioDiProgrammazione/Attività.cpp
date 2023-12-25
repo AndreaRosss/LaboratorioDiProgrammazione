@@ -1,7 +1,7 @@
 #include "Attività.h"
 using namespace std;
 
-Attività::Attività(string Descrizione, int Data, string OraInizio, string OraFine)
+Attività::Attività(wxString Descrizione, wxString Data, wxString OraInizio, wxString OraFine)
 {
 	this->Descrizione = Descrizione;
 	this->Data = Data;

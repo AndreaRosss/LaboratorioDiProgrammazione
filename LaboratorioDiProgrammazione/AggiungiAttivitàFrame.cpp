@@ -33,28 +33,21 @@ void AggiungiAttivitàFrame::AggiungiAttività(wxCommandEvent& evt){
 	
 	//estrazione data
 	wxDateTime d = Data->GetValue();
-	string a = to_string(d.GetDay());
-	string b = to_string(d.GetMonth());
-	string c = to_string(d.GetYear());
-	a.append(b).append(c);
+	wxString data = d.Format("%d-%m-%Y");
 
 	//estrazione ora inizio
-	wxDateTime orainizio = oraInizio->GetValue();
-	string ora1 = to_string(orainizio.GetHour());
-	string minuto1 = to_string(orainizio.GetMinute());
-	string orai = ora1.append(minuto1);
+	wxDateTime oi = oraInizio->GetValue();
+	wxString orainizio = d.Format("%H:%M");
 
 	//estrazione ora fine
-	wxDateTime orafine = oraFine->GetValue();
-	string ora2 = to_string(orafine.GetHour());
-	string minuto2 = to_string(orafine.GetMinute());
-	string oraf = ora2.append(minuto2);
+	wxDateTime of = oraFine->GetValue();
+	wxString orafine = d.Format("%H:%M");
 
 	//estrazione Descrizione
-	string desc = SezioneDescrizione->GetValue().ToStdString();
+	wxString desc = SezioneDescrizione->GetValue();
 
 	//crea Attività con i dati estratti, necessario modificare costruttore.
-	Attività* attività = new Attività(desc, stoi(a), orai, oraf);
+	Attività* attività = new Attività(desc, data, orainizio, orafine);
 	registro->AggiungiAttività(attività);
 
 }

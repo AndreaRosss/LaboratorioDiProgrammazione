@@ -6,15 +6,15 @@
 
 class Registro
 {
-	multimap <int, Attività*> registro;
+	multimap <wxString, Attività*> registro;
 
 public:
 	Registro();
 
 	void AggiungiAttività(Attività* attività);
 
-	bool CheckKey(vector<int> v, int k);
+	bool CheckKey(vector<wxString> v, wxString k);
 
-	vector<int> GetKeys();
+	vector<wxString> GetKeys();
 };
 

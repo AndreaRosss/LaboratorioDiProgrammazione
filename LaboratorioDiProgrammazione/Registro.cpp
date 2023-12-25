@@ -13,7 +13,7 @@ void Registro::AggiungiAttività(Attività* attività) {
 
 
 
-bool Registro::CheckKey(vector<int> v, int k)
+bool Registro::CheckKey(vector<wxString> v, wxString k)
 {
 	for (int i = 0; i < v.size(); i++) {
 		if (k == v[i]) {
@@ -23,9 +23,9 @@ bool Registro::CheckKey(vector<int> v, int k)
 	return true;
 }
 
-vector<int> Registro::GetKeys()
+vector<wxString> Registro::GetKeys()
 {
-	vector<int> Chiavi;
+	vector<wxString> Chiavi;
 	for (auto it = registro.begin(); it != registro.end(); it++) {
 
 		if (CheckKey(Chiavi, it->first)) {

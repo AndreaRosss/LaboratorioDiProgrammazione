@@ -4,7 +4,7 @@
 class SfogliaRegistroFrame : public wxFrame
 {
 public:
-	SfogliaRegistroFrame(vector<int> v, Registro* registro);
+	SfogliaRegistroFrame(vector<wxString> v, Registro* registro);
 
 private:
 	wxPanel* panel;

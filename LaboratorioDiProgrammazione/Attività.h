@@ -1,20 +1,21 @@
 #pragma once
 #include <string>
 #include <iostream>
+#include<wx/wx.h>
 using namespace std;
 
 class Attività
 {
-	string Descrizione;
-	int Data;
-	string OraInizio;
-	string OraFine;
+	wxString Descrizione;
+	wxString Data;
+	wxString OraInizio;
+	wxString OraFine;
 
 public:
-	Attività(string Descrizione, int Data, string OraInizio, string OraFine);
+	Attività(wxString Descrizione, wxString Data, wxString OraInizio, wxString OraFine);
 		
 
-	int GetData() {
+	wxString GetData() {
 		return this->Data;
 	}
 };
