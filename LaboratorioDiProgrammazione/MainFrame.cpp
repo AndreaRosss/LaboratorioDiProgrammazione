@@ -18,7 +18,7 @@ MainFrame::MainFrame(const wxString& title) : wxFrame(nullptr, wxID_ANY, title) 
 
 void MainFrame::ApriFrameAggiungiAttività(wxCommandEvent& evt)
 {	
-	AggiungiAttivitàFrame* aaf = new AggiungiAttivitàFrame(registro);
+	AggiungiAttivitàFrame* aaf = new AggiungiAttivitàFrame(this, registro);
 	aaf->SetClientSize(600, 400);
 	aaf->Center();
 	aaf->Show();
@@ -26,7 +26,7 @@ void MainFrame::ApriFrameAggiungiAttività(wxCommandEvent& evt)
 
 void MainFrame::ApriFrameSfogliaRegistro(wxCommandEvent& evt)
 {
-	SfogliaRegistroFrame* srf = new SfogliaRegistroFrame(registro->GetKeys(), registro);
+	SfogliaRegistroFrame* srf = new SfogliaRegistroFrame(this, registro->GetKeys(), registro->GetRegistro());
 	srf->SetClientSize(600, 400);
 	srf->Center();
 	srf->Show();
