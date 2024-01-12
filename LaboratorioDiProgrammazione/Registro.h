@@ -6,6 +6,8 @@
 
 class Registro
 {
+public:
+
 	multimap <wxString, Attività*> registro;
 
 public:
@@ -16,5 +18,10 @@ public:
 	bool CheckKey(vector<wxString> v, wxString k);
 
 	vector<wxString> GetKeys();
+
+	multimap <wxString, Attività*> GetRegistro() {
+		return this->registro;
+	}
+	
 };
 

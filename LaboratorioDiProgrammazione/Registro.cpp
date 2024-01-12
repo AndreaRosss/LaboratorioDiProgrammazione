@@ -7,7 +7,7 @@ using namespace std;
 Registro::Registro(){}
 
 void Registro::AggiungiAttività(Attività* attività) {
-	
+
 	registro.insert({ attività->GetData(), attività });
 }
 
