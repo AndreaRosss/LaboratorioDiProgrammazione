@@ -18,5 +18,17 @@ public:
 	wxString GetData() {
 		return this->Data;
 	}
+
+	wxString GetDescrizione() {
+		return this->Descrizione;
+	}
+
+	wxString GetOraInizio() {
+		return this->OraInizio;
+	}
+
+	wxString GetOraFine() {
+		return this->OraFine;
+	}
 };
 
