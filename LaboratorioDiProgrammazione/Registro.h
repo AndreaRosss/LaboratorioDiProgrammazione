@@ -8,18 +8,18 @@ class Registro
 {
 public:
 
-	multimap <wxString, Attività*> registro;
+	multimap <wxString, Attività> registro;
 
 public:
 	Registro();
 
-	void AggiungiAttività(Attività* attività);
+	void AggiungiAttività(const wxString descrizione, const wxString data, const wxString orainizio, const wxString orafine);
 
 	bool CheckKey(vector<wxString> v, wxString k);
 
 	vector<wxString> GetKeys();
 
-	multimap <wxString, Attività*> GetRegistro() {
+	multimap <wxString, Attività> GetRegistro() {
 		return this->registro;
 	}
 	

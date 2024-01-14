@@ -6,9 +6,10 @@ using namespace std;
 
 Registro::Registro(){}
 
-void Registro::AggiungiAttività(Attività* attività) {
+void Registro::AggiungiAttività(const wxString descrizione,const wxString data, const wxString orainizio, const wxString orafine) {
 
-	registro.insert({ attività->GetData(), attività });
+	Attività attività(descrizione, data, orainizio, orafine);
+	registro.insert({data, attività});
 }
 
 

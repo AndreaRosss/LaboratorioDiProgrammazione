@@ -7,12 +7,12 @@
 #include <string>
 using namespace std;
 
-AggiungiAttivitàFrame::AggiungiAttivitàFrame(Registro* registro) : wxFrame(nullptr, wxID_ANY, "Aggiungi Attività") {
+AggiungiAttivitàFrame::AggiungiAttivitàFrame(wxFrame* parent, Registro* registro) : wxFrame(parent , wxID_ANY, "Aggiungi Attività") {
 	panel = new wxPanel(this);
 
 	campo1 = new wxStaticText(panel, wxID_ANY, "Data:", wxPoint(10, 10), wxSize(100, 100));
 	Data = new wxDatePickerCtrl(panel, wxID_ANY, wxDefaultDateTime, wxPoint(50, 10), wxDefaultSize, 4L);
-
+	
 	campo2 = new wxStaticText(panel, wxID_ANY, "OraInizio:", wxPoint(200, 10), wxSize(100, 100));
 	oraInizio = new wxTimePickerCtrl(panel, wxID_ANY, wxDefaultDateTime, wxPoint(250, 10), wxDefaultSize, 0L);
 
@@ -37,18 +37,17 @@ void AggiungiAttivitàFrame::AggiungiAttività(wxCommandEvent& evt){
 
 	//estrazione ora inizio
 	wxDateTime oi = oraInizio->GetValue();
-	wxString orainizio = d.Format("%H:%M");
+	wxString orainizio = oi.Format("%H:%M:%S");
 
 	//estrazione ora fine
 	wxDateTime of = oraFine->GetValue();
-	wxString orafine = d.Format("%H:%M");
+	wxString orafine = of.Format("%H:%M:%S");
 
 	//estrazione Descrizione
 	wxString desc = SezioneDescrizione->GetValue();
 
 	//crea Attività con i dati estratti, necessario modificare costruttore.
-	Attività* attività = new Attività(desc, data, orainizio, orafine);
-	registro->AggiungiAttività(attività);
+	registro->AggiungiAttività(desc, data, orainizio, orafine);
 
 }
 
