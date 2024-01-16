@@ -10,7 +10,7 @@ using namespace std;
 
 class Registro
 {
-public:
+private:
 
 	multimap <wxString, Attivit‡> reg;
 
@@ -29,9 +29,15 @@ public:
 
 	Attivit‡ RicercaAttivit‡PerDescrizione(const wxString& x);
 
-	void ModificaAttivit‡();
+	Attivit‡ RicercaAttivit‡PerData(const wxString& x);
 
-	void CancellaAttivit‡();
+	int GetNumeroTotaleAttivit‡();
+
+	int GetNumeroAttivit‡DiUnGioro(const wxString& data);
+
+	void ModificaAttivit‡(Attivit‡ attivit‡);
+
+	void CancellaAttivit‡(Attivit‡ attivit‡);
 
 };
 

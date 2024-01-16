@@ -10,7 +10,7 @@ using namespace std;
 Registro::Registro(){}
 
 void Registro::AggiungiAttività(const wxString& descrizione,const wxString& data, const wxString& orainizio, const wxString& orafine) {
-
+	
 	Attività attività(descrizione, data, orainizio, orafine);
 	reg.insert({data, attività});
 }
@@ -78,5 +78,46 @@ Attività Registro::RicercaAttivitàPerDescrizione(const wxString& x)
 	}
 	throw MyErrorException("Nessuna attività contiene queste parole");
 	return Attività("", "", "", ""); //crea Attività Vuota come oggetto globale al quale si può sempre accedere, per non ricrearla ogni volta.
+}
+
+//Aggiungere formato data come suggerimento
+Attività Registro::RicercaAttivitàPerData(const wxString& x)
+{
+	for (auto it = reg.begin(); it != reg.end(); it++) {
+		if (it->second.GetData().Contains(x)) {
+			return it->second;
+		}
+	}
+	throw MyErrorException("In questa data non sono state svolte attività");
+	return Attività("", "", "", "");
+}
+
+int Registro::GetNumeroTotaleAttività()
+{
+	return reg.size();
+}
+
+int Registro::GetNumeroAttivitàDiUnGioro(const wxString& Data)
+{
+	return reg.count(Data);
+}
+
+void Registro::ModificaAttività(Attività attività)
+{
+	auto it = reg.begin();
+	while (it != reg.end() && it->second != attività) {
+		++it;
+	}
+}
+
+void Registro::CancellaAttività(Attività attività)
+{	
+	auto it = reg.begin();
+	while (it != reg.end()  && it->second != attività) {
+		++it;
+	}
+	if (it != reg.end()) {
+		reg.erase(it);
+	}
 }
 
