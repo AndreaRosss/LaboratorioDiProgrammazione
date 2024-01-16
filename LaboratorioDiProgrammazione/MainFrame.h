@@ -10,9 +10,10 @@ public:
 	MainFrame(const wxString& title);
 	~MainFrame() {};
 
+private:
 	Registro registro;
 
-private:
+public:
 	void ApriFrameAggiungiAttività(wxCommandEvent& evt);
 
 	void ApriFrameSfogliaRegistro(wxCommandEvent& evt);
