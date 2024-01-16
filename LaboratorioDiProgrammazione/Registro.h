@@ -27,6 +27,12 @@ public:
 
 	wxArrayString GetKeysToString();
 
+	Attivit‡ RicercaAttivit‡PerDescrizione(const wxString& x);
+
+	void ModificaAttivit‡();
+
+	void CancellaAttivit‡();
+
 };
 
 

@@ -1,5 +1,6 @@
 #include "Registro.h"
 #include "Attività.h"
+#include "MyErrorException.h"
 #include <map>
 #include <iterator>
 #include <vector>
@@ -62,5 +63,20 @@ wxArrayString Registro::GetKeysToString()
 		as.Add(Chiavi[i]);
 	}
 	return as;
+}
+
+//TBD: questa funzione verrà utilizzata nel binding di un bottone del MainFrame.
+//sarà lì che posizioneremo il blocco try. Il catche del blocco try aprirà un nuovo frame (ErrorFrame, da implementare)
+//che mostrerà il messaggio con cui è stata creata l'eccezione. Successivamente la finestra che mostra l'attività
+// mostrerà l'Attività Vuota. 
+Attività Registro::RicercaAttivitàPerDescrizione(const wxString& x)
+{
+	for (auto it = reg.begin(); it != reg.end(); it++) {
+		if (it->second.GetDescrizione().Contains(x)) {
+			return it->second;
+		}
+	}
+	throw MyErrorException("Nessuna attività contiene queste parole");
+	return Attività("", "", "", ""); //crea Attività Vuota come oggetto globale al quale si può sempre accedere, per non ricrearla ogni volta.
 }
 
