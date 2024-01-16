@@ -1,13 +1,14 @@
+#include "Registro.h"
 #include "AggiungiAttivit‡Frame.h"
 #include <wx/wx.h>
 #include <wx/calctrl.h>
 #include <wx/datectrl.h>
 #include <wx/timectrl.h>
 #include <wx/datetime.h>
-#include <string>
 using namespace std;
 
-AggiungiAttivit‡Frame::AggiungiAttivit‡Frame(wxFrame* parent, Registro* registro) : wxFrame(parent , wxID_ANY, "Aggiungi Attivit‡") {
+
+AggiungiAttivit‡Frame::AggiungiAttivit‡Frame(wxFrame* parent, Registro* registro) : wxFrame(parent , wxID_ANY, "Aggiungi Attivit‡"), registro(registro) {
 	panel = new wxPanel(this);
 
 	campo1 = new wxStaticText(panel, wxID_ANY, "Data:", wxPoint(10, 10), wxSize(100, 100));
@@ -24,8 +25,6 @@ AggiungiAttivit‡Frame::AggiungiAttivit‡Frame(wxFrame* parent, Registro* registro
 
 	aggiungiAttivit‡ = new wxButton(panel, wxID_ANY, "Aggiungi Attivit‡", wxPoint(225, 300), wxSize(150, -1));
 	aggiungiAttivit‡->Bind(wxEVT_BUTTON, &AggiungiAttivit‡Frame::AggiungiAttivit‡, this);
-
-	this->registro = registro;
 
 }
 

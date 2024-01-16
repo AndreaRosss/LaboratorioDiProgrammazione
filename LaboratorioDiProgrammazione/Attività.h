@@ -1,8 +1,7 @@
 #pragma once
-#include <string>
-#include <iostream>
 #include<wx/wx.h>
 using namespace std;
+
 
 class Attività
 {
@@ -12,8 +11,8 @@ class Attività
 	wxString OraFine;
 
 public:
-	Attività(wxString Descrizione, wxString Data, wxString OraInizio, wxString OraFine);
-		
+	Attività(const wxString& Descrizione, const wxString& Data, const wxString& OraInizio, const wxString& OraFine);
+
 
 	wxString GetData() {
 		return this->Data;
@@ -31,4 +30,5 @@ public:
 		return this->OraFine;
 	}
 };
+
 

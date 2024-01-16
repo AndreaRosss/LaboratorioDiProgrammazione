@@ -1,8 +1,8 @@
 #pragma once
-#include <wx/wx.h>
 #include "Registro.h"
-#include"AggiungiAttivit‡Frame.h"
-#include "SfogliaRegistroFrame.h"
+#include <wx/wx.h>
+using namespace std;
+
 
 class MainFrame : public wxFrame
 {
@@ -10,7 +10,7 @@ public:
 	MainFrame(const wxString& title);
 	~MainFrame() {};
 
-	Registro* registro;
+	Registro registro;
 
 private:
 	void ApriFrameAggiungiAttivit‡(wxCommandEvent& evt);
@@ -18,4 +18,5 @@ private:
 	void ApriFrameSfogliaRegistro(wxCommandEvent& evt);
 
 };
+
 

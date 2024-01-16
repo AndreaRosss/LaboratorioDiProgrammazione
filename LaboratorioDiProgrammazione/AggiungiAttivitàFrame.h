@@ -1,19 +1,22 @@
 #pragma once
+#include "Registro.h"
 #include <wx/wx.h>
 #include <wx/calctrl.h>
 #include <wx/datectrl.h>
 #include <wx/timectrl.h>
 #include <wx/datetime.h>
-#include <string>
-#include "Registro.h"
 using namespace std;
 
-class AggiungiAttivit‡Frame : public wxFrame 
+class Registro;
+
+class AggiungiAttivit‡Frame : public wxFrame
 {
-public: 
+public:
 	AggiungiAttivit‡Frame(wxFrame* parent, Registro* registro);
+
 private:
 
+	Registro* registro;
 	wxPanel* panel;
 	wxStaticText* campo1;
 	wxDatePickerCtrl* Data;
@@ -25,8 +28,9 @@ private:
 	wxTextCtrl* SezioneDescrizione;
 	wxButton* aggiungiAttivit‡;
 
-	Registro* registro;
-
+public:
 	void AggiungiAttivit‡(wxCommandEvent& evt);
 };
+
+
 

@@ -1,5 +1,6 @@
 #include "App.h"
 #include "MainFrame.h"
+using namespace std;
 
 wxIMPLEMENT_APP(App);
 
