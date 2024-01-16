@@ -155,6 +155,7 @@
     <ClInclude Include="App.h" />
     <ClInclude Include="Attività.h" />
     <ClInclude Include="MainFrame.h" />
+    <ClInclude Include="MyErrorException.h" />
     <ClInclude Include="Registro.h" />
     <ClInclude Include="SfogliaRegistroFrame.h" />
   </ItemGroup>
@@ -163,6 +164,7 @@
     <ClCompile Include="App.cpp" />
     <ClCompile Include="Attività.cpp" />
     <ClCompile Include="MainFrame.cpp" />
+    <ClCompile Include="MyErrorException.cpp" />
     <ClCompile Include="Registro.cpp" />
     <ClCompile Include="SfogliaRegistroFrame.cpp" />
   </ItemGroup>
