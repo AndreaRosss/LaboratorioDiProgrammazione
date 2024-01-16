@@ -13,50 +13,62 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="File di origine\Classi">
+      <UniqueIdentifier>{5129c287-d0b9-48ef-9162-0b0c2a9e3255}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="File di origine\Frames">
+      <UniqueIdentifier>{093ff87d-e3af-4bd6-a212-cd0a14445ff3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="File di intestazione\Frames">
+      <UniqueIdentifier>{65836c3b-4f36-4ece-a223-76052dfb8c9e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="File di intestazione\Classi">
+      <UniqueIdentifier>{8bac8663-92f6-4d56-ade7-1a7d85202f89}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Attività.cpp">
-      <Filter>File di origine</Filter>
-    </ClCompile>
-    <ClCompile Include="Registro.cpp">
-      <Filter>File di origine</Filter>
+    <ClCompile Include="AggiungiAttivitàFrame.cpp">
+      <Filter>File di origine\Frames</Filter>
     </ClCompile>
     <ClCompile Include="MainFrame.cpp">
-      <Filter>File di origine</Filter>
-    </ClCompile>
-    <ClCompile Include="App.cpp">
-      <Filter>File di origine</Filter>
-    </ClCompile>
-    <ClCompile Include="AggiungiAttivitàFrame.cpp">
-      <Filter>File di origine</Filter>
+      <Filter>File di origine\Frames</Filter>
     </ClCompile>
     <ClCompile Include="SfogliaRegistroFrame.cpp">
+      <Filter>File di origine\Frames</Filter>
+    </ClCompile>
+    <ClCompile Include="Attività.cpp">
+      <Filter>File di origine\Classi</Filter>
+    </ClCompile>
+    <ClCompile Include="App.cpp">
       <Filter>File di origine</Filter>
     </ClCompile>
     <ClCompile Include="MyErrorException.cpp">
       <Filter>File di origine</Filter>
     </ClCompile>
+    <ClCompile Include="Registro.cpp">
+      <Filter>File di origine\Classi</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Attività.h">
-      <Filter>File di intestazione</Filter>
-    </ClInclude>
-    <ClInclude Include="Registro.h">
-      <Filter>File di intestazione</Filter>
-    </ClInclude>
-    <ClInclude Include="MainFrame.h">
-      <Filter>File di intestazione</Filter>
-    </ClInclude>
-    <ClInclude Include="App.h">
+    <ClInclude Include="MyErrorException.h">
       <Filter>File di intestazione</Filter>
     </ClInclude>
     <ClInclude Include="AggiungiAttivitàFrame.h">
-      <Filter>File di intestazione</Filter>
+      <Filter>File di intestazione\Frames</Filter>
+    </ClInclude>
+    <ClInclude Include="MainFrame.h">
+      <Filter>File di intestazione\Frames</Filter>
     </ClInclude>
     <ClInclude Include="SfogliaRegistroFrame.h">
-      <Filter>File di intestazione</Filter>
+      <Filter>File di intestazione\Frames</Filter>
     </ClInclude>
-    <ClInclude Include="MyErrorException.h">
+    <ClInclude Include="Attività.h">
+      <Filter>File di intestazione\Classi</Filter>
+    </ClInclude>
+    <ClInclude Include="Registro.h">
+      <Filter>File di intestazione\Classi</Filter>
+    </ClInclude>
+    <ClInclude Include="App.h">
       <Filter>File di intestazione</Filter>
     </ClInclude>
   </ItemGroup>
