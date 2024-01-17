@@ -4,6 +4,8 @@
 #include <wx/listctrl.h>
 using namespace std;
 
+class Registro;
+
 class SfogliaRegistroFrame : public wxFrame
 {
 public:

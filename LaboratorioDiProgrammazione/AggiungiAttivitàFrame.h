@@ -7,7 +7,7 @@
 #include <wx/datetime.h>
 using namespace std;
 
-
+class Registro;
 
 class AggiungiAttivit‡Frame : public wxFrame
 {
