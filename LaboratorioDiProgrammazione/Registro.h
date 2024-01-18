@@ -2,7 +2,7 @@
 #include <string>
 #include<map>
 #include <vector>
-#include"Attivit‡.h"
+#include"Attivita.h"
 #include "SfogliaRegistroFrame.h"
 using namespace std;
 
@@ -12,32 +12,32 @@ class Registro
 {
 private:
 
-	multimap <wxString, Attivit‡> reg;
+	multimap <wxString, Attivita> reg;
 
 public:
 	Registro();
 
-	void AggiungiAttivit‡(const wxString& descrizione, const wxString& data, const wxString& orainizio, const wxString& orafine);
+	void AggiungiAttivita(const wxString& descrizione, const wxString& data, const wxString& orainizio, const wxString& orafine);
 
 	bool CheckKey(const vector<wxString>& v,const wxString& k);
 
-	void MostraAttivit‡SfogliaRegistroFrame(SfogliaRegistroFrame* x);
+	void MostraAttivitaSfogliaRegistroFrame(SfogliaRegistroFrame* x);
 
 	vector<wxString> GetKeys();
 
 	wxArrayString GetKeysToString();
 
-	Attivit‡ RicercaAttivit‡PerDescrizione(const wxString& x);
+	Attivita RicercaAttivitaPerDescrizione(const wxString& x);
 
-	Attivit‡ RicercaAttivit‡PerData(const wxString& x);
+	Attivita RicercaAttivitaPerData(const wxString& x);
 
-	int GetNumeroTotaleAttivit‡();
+	int GetNumeroTotaleAttivita();
 
-	int GetNumeroAttivit‡DiUnGioro(const wxString& data);
+	int GetNumeroAttivitaDiUnGioro(const wxString& data);
 
-	void ModificaAttivit‡(Attivit‡ attivit‡);
+	void ModificaAttivita(Attivita Attivita);
 
-	void CancellaAttivit‡(Attivit‡ attivit‡);
+	void CancellaAttivita(Attivita Attivita);
 
 };
 

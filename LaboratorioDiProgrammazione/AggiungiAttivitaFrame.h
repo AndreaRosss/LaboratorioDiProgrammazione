@@ -9,10 +9,10 @@ using namespace std;
 
 class Registro;
 
-class AggiungiAttivit‡Frame : public wxFrame
+class AggiungiAttivitaFrame : public wxFrame
 {
 public:
-	AggiungiAttivit‡Frame(wxFrame* parent, Registro* registro);
+	AggiungiAttivitaFrame(wxFrame* parent, Registro* registro);
 
 private:
 
@@ -26,10 +26,10 @@ private:
 	wxTimePickerCtrl* oraFine;
 	wxStaticText* campo4;
 	wxTextCtrl* SezioneDescrizione;
-	wxButton* aggiungiAttivit‡;
+	wxButton* aggiungiAttivita;
 
 public:
-	void AggiungiAttivit‡(wxCommandEvent& evt);
+	void AggiungiAttivita(wxCommandEvent& evt);
 };
 
 

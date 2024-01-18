@@ -2,8 +2,10 @@
 #include<wx/wx.h>
 using namespace std;
 
+#ifndef UNIT_TESTING_ATTIVITA_H
+#define UNIT_TESTING_ATTIVITA_H
 
-class Attività
+class Attivita
 {
 private:
 	wxString Descrizione;
@@ -13,10 +15,10 @@ private:
 
 public:
 
-	Attività(const wxString& Descrizione, const wxString& Data, const wxString& OraInizio, const wxString& OraFine);
-	~Attività() {};
+	Attivita(const wxString& Descrizione, const wxString& Data, const wxString& OraInizio, const wxString& OraFine);
+	~Attivita() {};
 
-	bool operator!=(const Attività& attività);
+	bool operator!=(const Attivita& Attivita);
 
 	bool ValiditàOrari(const wxString& a, const wxString& b);
 
@@ -52,5 +54,8 @@ public:
 		this->OraFine = OraFine;
 	}
 };
+
+#endif // !UNIT_TESTING_ATTIVITA_H
+
 
 

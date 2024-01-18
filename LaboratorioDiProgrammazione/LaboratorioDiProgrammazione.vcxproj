@@ -88,7 +88,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>C:\Users\andre\wxWidgets-3.2.2.1\include;C:\Users\andre\wxWidgets-3.2.2.1\include\msvc;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\andre\googletest-1.14.0\googletest\include;C:\Users\andre\wxWidgets-3.2.2.1\include;C:\Users\andre\wxWidgets-3.2.2.1\include\msvc;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <DisableSpecificWarnings>4996;%(DisableSpecificWarnings)</DisableSpecificWarnings>
     </ClCompile>
     <Link>
@@ -105,7 +105,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>C:\Users\andre\wxWidgets-3.2.2.1\include;C:\Users\andre\wxWidgets-3.2.2.1\include\msvc;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\andre\googletest-1.14.0\googletest\include;C:\Users\andre\wxWidgets-3.2.2.1\include;C:\Users\andre\wxWidgets-3.2.2.1\include\msvc;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <DisableSpecificWarnings>4996;%(DisableSpecificWarnings)</DisableSpecificWarnings>
     </ClCompile>
     <Link>
@@ -151,18 +151,18 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="AggiungiAttivitàFrame.h" />
+    <ClInclude Include="AggiungiAttivitaFrame.h" />
     <ClInclude Include="App.h" />
-    <ClInclude Include="Attività.h" />
+    <ClInclude Include="Attivita.h" />
     <ClInclude Include="MainFrame.h" />
     <ClInclude Include="MyErrorException.h" />
     <ClInclude Include="Registro.h" />
     <ClInclude Include="SfogliaRegistroFrame.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="AggiungiAttivitàFrame.cpp" />
+    <ClCompile Include="AggiungiAttivitaFrame.cpp" />
     <ClCompile Include="App.cpp" />
-    <ClCompile Include="Attività.cpp" />
+    <ClCompile Include="Attivita.cpp" />
     <ClCompile Include="MainFrame.cpp" />
     <ClCompile Include="MyErrorException.cpp" />
     <ClCompile Include="Registro.cpp" />

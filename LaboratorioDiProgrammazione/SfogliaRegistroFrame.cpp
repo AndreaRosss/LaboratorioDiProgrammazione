@@ -5,7 +5,7 @@
 #include <wx/wx.h>
 using namespace std;
 
-SfogliaRegistroFrame::SfogliaRegistroFrame(wxFrame* parent,  Registro* registro) : wxFrame(parent, wxID_ANY, "Aggiungi Attività"), registr(registro){
+SfogliaRegistroFrame::SfogliaRegistroFrame(wxFrame* parent,  Registro* registro) : wxFrame(parent, wxID_ANY, "Aggiungi Attivita"), registr(registro){
 	panel = new wxPanel(this);
 	as = registr->GetKeysToString();
 	choiche = new wxChoice(panel, wxID_ANY, wxPoint(250, 10), wxSize(100,-1),as);
@@ -15,7 +15,7 @@ SfogliaRegistroFrame::SfogliaRegistroFrame(wxFrame* parent,  Registro* registro)
 
 void SfogliaRegistroFrame::OnChoiceChanged(wxCommandEvent& evt)
 {
-	registr->MostraAttivitàSfogliaRegistroFrame(this);
+	registr->MostraAttivitaSfogliaRegistroFrame(this);
 }
 
 

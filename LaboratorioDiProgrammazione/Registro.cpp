@@ -1,5 +1,5 @@
 #include "Registro.h"
-#include "Attività.h"
+#include "Attivita.h"
 #include "MyErrorException.h"
 #include <map>
 #include <iterator>
@@ -9,10 +9,10 @@ using namespace std;
 
 Registro::Registro(){}
 
-void Registro::AggiungiAttività(const wxString& descrizione,const wxString& data, const wxString& orainizio, const wxString& orafine) {
+void Registro::AggiungiAttivita(const wxString& descrizione,const wxString& data, const wxString& orainizio, const wxString& orafine) {
 	
-	Attività attività(descrizione, data, orainizio, orafine);
-	reg.insert({data, attività});
+	Attivita Attivita(descrizione, data, orainizio, orafine);
+	reg.insert({data, Attivita});
 }
 
 
@@ -27,7 +27,7 @@ bool Registro::CheckKey(const vector<wxString>& v,const wxString& k)
 	return true;
 }
 
-void Registro::MostraAttivitàSfogliaRegistroFrame(SfogliaRegistroFrame* x)
+void Registro::MostraAttivitaSfogliaRegistroFrame(SfogliaRegistroFrame* x)
 {	
 	x->GetDescrizione()->Clear();
 	auto it = reg.begin();
@@ -67,53 +67,53 @@ wxArrayString Registro::GetKeysToString()
 
 //TBD: questa funzione verrà utilizzata nel binding di un bottone del MainFrame.
 //sarà lì che posizioneremo il blocco try. Il catche del blocco try aprirà un nuovo frame (ErrorFrame, da implementare)
-//che mostrerà il messaggio con cui è stata creata l'eccezione. Successivamente la finestra che mostra l'attività
-// mostrerà l'Attività Vuota. 
-Attività Registro::RicercaAttivitàPerDescrizione(const wxString& x)
+//che mostrerà il messaggio con cui è stata creata l'eccezione. Successivamente la finestra che mostra l'Attivita
+// mostrerà l'Attivita Vuota. 
+Attivita Registro::RicercaAttivitaPerDescrizione(const wxString& x)
 {
 	for (auto it = reg.begin(); it != reg.end(); it++) {
 		if (it->second.GetDescrizione().Contains(x)) {
 			return it->second;
 		}
 	}
-	throw MyErrorException("Nessuna attività contiene queste parole");
-	return Attività("", "", "", ""); //crea Attività Vuota come oggetto globale al quale si può sempre accedere, per non ricrearla ogni volta.
+	throw MyErrorException("Nessuna Attivita contiene queste parole");
+	return Attivita("", "", "", ""); //crea Attivita Vuota come oggetto globale al quale si può sempre accedere, per non ricrearla ogni volta.
 }
 
 //Aggiungere formato data come suggerimento
-Attività Registro::RicercaAttivitàPerData(const wxString& x)
+Attivita Registro::RicercaAttivitaPerData(const wxString& x)
 {
 	for (auto it = reg.begin(); it != reg.end(); it++) {
 		if (it->second.GetData().Contains(x)) {
 			return it->second;
 		}
 	}
-	throw MyErrorException("In questa data non sono state svolte attività");
-	return Attività("", "", "", "");
+	throw MyErrorException("In questa data non sono state svolte Attivita");
+	return Attivita("", "", "", "");
 }
 
-int Registro::GetNumeroTotaleAttività()
+int Registro::GetNumeroTotaleAttivita()
 {
 	return reg.size();
 }
 
-int Registro::GetNumeroAttivitàDiUnGioro(const wxString& Data)
+int Registro::GetNumeroAttivitaDiUnGioro(const wxString& Data)
 {
 	return reg.count(Data);
 }
 
-void Registro::ModificaAttività(Attività attività)
+void Registro::ModificaAttivita(Attivita Attivita)
 {
 	auto it = reg.begin();
-	while (it != reg.end() && it->second != attività) {
+	while (it != reg.end() && it->second != Attivita) {
 		++it;
 	}
 }
 
-void Registro::CancellaAttività(Attività attività)
+void Registro::CancellaAttivita(Attivita Attivita)
 {	
 	auto it = reg.begin();
-	while (it != reg.end()  && it->second != attività) {
+	while (it != reg.end()  && it->second != Attivita) {
 		++it;
 	}
 	if (it != reg.end()) {

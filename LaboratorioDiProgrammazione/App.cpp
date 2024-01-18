@@ -5,7 +5,7 @@ using namespace std;
 wxIMPLEMENT_APP(App);
 
 bool App::OnInit() {
-	MainFrame* mainFrame = new MainFrame("Registro Attività");
+	MainFrame* mainFrame = new MainFrame("Registro Attivita");
 	mainFrame->SetClientSize(800, 600);
 	mainFrame->Center();
 	mainFrame->Show();

@@ -1,5 +1,5 @@
 #include "Registro.h"
-#include "AggiungiAttivit‡Frame.h"
+#include "AggiungiAttivitaFrame.h"
 #include <wx/wx.h>
 #include <wx/calctrl.h>
 #include <wx/datectrl.h>
@@ -8,7 +8,7 @@
 using namespace std;
 
 
-AggiungiAttivit‡Frame::AggiungiAttivit‡Frame(wxFrame* parent, Registro* registro) : wxFrame(parent , wxID_ANY, "Aggiungi Attivit‡"), registro(registro) {
+AggiungiAttivitaFrame::AggiungiAttivitaFrame(wxFrame* parent, Registro* registro) : wxFrame(parent , wxID_ANY, "Aggiungi Attivita"), registro(registro) {
 	panel = new wxPanel(this);
 
 	campo1 = new wxStaticText(panel, wxID_ANY, "Data:", wxPoint(10, 10), wxSize(100, 100));
@@ -23,12 +23,12 @@ AggiungiAttivit‡Frame::AggiungiAttivit‡Frame(wxFrame* parent, Registro* registro
 	campo4 = new wxStaticText(panel, wxID_ANY, "Descrizione:", wxPoint(10, 50), wxSize(100, 100));
 	SezioneDescrizione = new wxTextCtrl(panel, wxID_ANY, "", wxPoint(10, 75), wxSize(580, 150));
 
-	aggiungiAttivit‡ = new wxButton(panel, wxID_ANY, "Aggiungi Attivit‡", wxPoint(225, 300), wxSize(150, -1));
-	aggiungiAttivit‡->Bind(wxEVT_BUTTON, &AggiungiAttivit‡Frame::AggiungiAttivit‡, this);
+	aggiungiAttivita = new wxButton(panel, wxID_ANY, "Aggiungi Attivita", wxPoint(225, 300), wxSize(150, -1));
+	aggiungiAttivita->Bind(wxEVT_BUTTON, &AggiungiAttivitaFrame::AggiungiAttivita, this);
 
 }
 
-void AggiungiAttivit‡Frame::AggiungiAttivit‡(wxCommandEvent& evt){
+void AggiungiAttivitaFrame::AggiungiAttivita(wxCommandEvent& evt){
 	
 	//estrazione data
 	wxDateTime d = Data->GetValue();
@@ -45,8 +45,8 @@ void AggiungiAttivit‡Frame::AggiungiAttivit‡(wxCommandEvent& evt){
 	//estrazione Descrizione
 	wxString desc = SezioneDescrizione->GetValue();
 
-	//crea Attivit‡ con i dati estratti, necessario modificare costruttore.
-	registro->AggiungiAttivit‡(desc, data, orainizio, orafine);
+	//crea Attivita con i dati estratti, necessario modificare costruttore.
+	registro->AggiungiAttivita(desc, data, orainizio, orafine);
 
 }
 

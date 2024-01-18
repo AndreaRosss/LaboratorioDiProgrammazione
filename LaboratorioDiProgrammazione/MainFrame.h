@@ -14,7 +14,7 @@ private:
 	Registro registro;
 
 public:
-	void ApriFrameAggiungiAttività(wxCommandEvent& evt);
+	void ApriFrameAggiungiAttivita(wxCommandEvent& evt);
 
 	void ApriFrameSfogliaRegistro(wxCommandEvent& evt);
 
