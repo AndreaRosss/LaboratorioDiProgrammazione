@@ -23,8 +23,10 @@ bool Attivita::Validit‡Orari(const wxString& a, const wxString& b)
 	wxDateTime Inizio, Fine;
 	Inizio.ParseFormat(a, "%H:%M:%S");
 	Fine.ParseFormat(b, "%H:%M:%S");
-	if (Inizio < Fine) {
-		return true;
+	if (Inizio.GetHour() <= Fine.GetHour() ) {
+		if (Inizio.GetMinute() < Fine.GetMinute()) {
+			return true;
+		}
 	}
 	else false;
 }
