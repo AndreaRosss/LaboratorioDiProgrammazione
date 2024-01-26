@@ -13,9 +13,9 @@ Attivita::Attivita(const wxString& descrizione,const wxString& data, const wxStr
 bool Attivita::operator!=(const Attivita& Attivita)
 {
 	if (Descrizione.IsSameAs(Attivita.Descrizione) && Data.IsSameAs(Attivita.Data) && OraInizio.IsSameAs(Attivita.OraInizio) && OraFine.IsSameAs(Attivita.OraFine)) {
-		return true;
+		return false;
 	}
-	else return false;
+	else return true;
 }
 
 bool Attivita::Validit‡Orari(const wxString& a, const wxString& b)
