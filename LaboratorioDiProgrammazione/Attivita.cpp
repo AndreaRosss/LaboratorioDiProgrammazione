@@ -26,7 +26,7 @@ bool Attivita::Validit‡Orari(const wxString& a, const wxString& b)
 	if (Inizio.GetHour() < Fine.GetHour()) {
 		return true;
 	}
-	else{ 
+	else { 
 		if (Inizio.GetHour() == Fine.GetHour()) {				
 			if (Inizio.GetMinute() < Fine.GetMinute()) {
 				return true;
