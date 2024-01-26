@@ -21,15 +21,13 @@ TEST(Attivita, CheckValidit‡Orari) {
 
 TEST(Attivita, MyConstructor) {
 	
-	wxString a = "Test Attivita";
-	wxString b = "17-01-2024";
-	wxString c = "16:42";
-	wxString d = "17:43";
-	Attivita att(a, b, c, d);
-	ASSERT_EQ(a, att.GetDescrizione());
-	ASSERT_EQ(b, att.GetData());
-	ASSERT_EQ(c, att.GetOraInizio());
-	ASSERT_EQ(d, att.GetOraFine());
+	Attivita att("Test Attivita","17-01-2024" , "16:42", "17:43");
+	ASSERT_EQ("Test Attivita", att.GetDescrizione());
+	ASSERT_EQ("17-01-2024", att.GetData());
+	ASSERT_EQ("16:42", att.GetOraInizio());
+	ASSERT_EQ("17:43", att.GetOraFine());
+	//controllo lancio eccezione
+	ASSERT_THROW(Attivita att1("Test Exception", "19-01-2024", "16:42", "16:40"), MyErrorException);
 
 }
 

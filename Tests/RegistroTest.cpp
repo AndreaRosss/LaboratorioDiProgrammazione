@@ -40,4 +40,26 @@ TEST_F(RegistroSuite, TestRicercaPerData) {
 
 }
 
+TEST_F(RegistroSuite, TestGetKeys) {
+
+	vector<wxString> x = r.GetKeys();
+	ASSERT_EQ(x[0], "17-01-2024");
+
+}
+
+TEST_F(RegistroSuite, NumeroTotaleAttività) {
+	
+	int i = r.GetNumeroTotaleAttivita();
+	ASSERT_EQ(i, 1);
+
+}
+
+TEST_F(RegistroSuite, NumeroAttivitaInUnGiorno) {
+
+	r.AggiungiAttivita("prova", "17-01-2024", "15:43", "18:45");
+	int i = r.GetNumeroAttivitaDiUnGioro("17-01-2024");
+	ASSERT_EQ(i, 2);
+
+}
+
 
