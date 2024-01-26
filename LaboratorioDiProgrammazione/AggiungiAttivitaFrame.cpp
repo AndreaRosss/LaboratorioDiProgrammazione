@@ -15,8 +15,8 @@ AggiungiAttivitaFrame::AggiungiAttivitaFrame(wxFrame* parent, Registro* registro
 	Data = new wxDatePickerCtrl(panel, wxID_ANY, wxDefaultDateTime, wxPoint(50, 10), wxDefaultSize, 4L);
 	
 	campo2 = new wxStaticText(panel, wxID_ANY, "OraInizio:", wxPoint(200, 10), wxSize(100, 100));
-	oraInizio = new wxTimePickerCtrl(panel, wxID_ANY, wxDefaultDateTime, wxPoint(250, 10), wxDefaultSize, 0L);
-
+	oraInizio = new wxTimePickerCtrl(panel, wxID_ANY, wxDefaultDateTime, wxPoint(250, 10), wxDefaultSize, wxTP_DEFAULT);
+	
 	campo3 = new wxStaticText(panel, wxID_ANY, "OraFine:", wxPoint(350, 10), wxSize(100, 100));
 	oraFine = new wxTimePickerCtrl(panel, wxID_ANY, wxDefaultDateTime, wxPoint(400, 10), wxDefaultSize, 0L);
 
@@ -36,11 +36,11 @@ void AggiungiAttivitaFrame::AggiungiAttivita(wxCommandEvent& evt){
 
 	//estrazione ora inizio
 	wxDateTime oi = oraInizio->GetValue();
-	wxString orainizio = oi.Format("%H:%M:%S");
+	wxString orainizio = oi.Format("%H:%M");
 
 	//estrazione ora fine
 	wxDateTime of = oraFine->GetValue();
-	wxString orafine = of.Format("%H:%M:%S");
+	wxString orafine = of.Format("%H:%M");
 
 	//estrazione Descrizione
 	wxString desc = SezioneDescrizione->GetValue();

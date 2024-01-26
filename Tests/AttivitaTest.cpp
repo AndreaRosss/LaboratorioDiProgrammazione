@@ -13,10 +13,10 @@ TEST(Attivita, CheckValidit‡Orari) {
 	wxString d = "17:43";
 	wxString e = "16:43";
 	Attivita att(a, b, c, d);
-	ASSERT_FALSE(att.Validit‡Orari(d, c));
-	ASSERT_FALSE(att.Validit‡Orari(e, c));
-	ASSERT_TRUE(att.Validit‡Orari(c, e));
-	ASSERT_TRUE(att.Validit‡Orari(c, d));
+	ASSERT_FALSE(att.ValiditaOrari(d, c));
+	ASSERT_FALSE(att.ValiditaOrari(e, c));
+	ASSERT_TRUE(att.ValiditaOrari(c, e));
+	ASSERT_TRUE(att.ValiditaOrari(c, d));
 }
 
 TEST(Attivita, MyConstructor) {

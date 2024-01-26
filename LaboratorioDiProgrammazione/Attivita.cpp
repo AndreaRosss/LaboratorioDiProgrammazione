@@ -5,7 +5,7 @@ using namespace std;
 Attivita::Attivita(const wxString& descrizione,const wxString& data, const wxString& oraInizio,const wxString& oraFine) : 
 	Descrizione(descrizione), Data(data), OraInizio(oraInizio), OraFine(oraFine){
 
-	if (!ValiditàOrari(oraInizio, oraFine)) {
+	if (!ValiditaOrari(oraInizio, oraFine)) {
 		throw MyErrorException("Impossibile creare l'Attivita. Orari Impossibili.");
 	}
 }
@@ -18,7 +18,7 @@ bool Attivita::operator!=(const Attivita& Attivita)
 	else return true;
 }
 
-bool Attivita::ValiditàOrari(const wxString& a, const wxString& b)
+bool Attivita::ValiditaOrari(const wxString& a, const wxString& b)
 {	
 	wxDateTime Inizio, Fine;
 	Inizio.ParseTime(a);

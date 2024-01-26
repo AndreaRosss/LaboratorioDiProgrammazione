@@ -20,7 +20,7 @@ public:
 
 	bool operator!=(const Attivita& Attivita);
 
-	bool ValiditàOrari(const wxString& a, const wxString& b);
+	bool ValiditaOrari(const wxString& a, const wxString& b);
 
 	wxString GetData() {
 		return this->Data;
