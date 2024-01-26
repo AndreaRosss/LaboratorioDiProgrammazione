@@ -7,6 +7,9 @@
 using namespace std;
 
 
+#ifndef UNIT_TESTING_REGISTRO_H
+#define UNIT_TESTING_REGISTRO_H
+
 
 class Registro
 {
@@ -40,5 +43,5 @@ public:
 	void CancellaAttivita(Attivita Attivita);
 
 };
-
+#endif // !UNIT_TESTING_REGISTRO_H
 
