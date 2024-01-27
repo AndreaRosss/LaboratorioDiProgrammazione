@@ -10,7 +10,7 @@ Attivita::Attivita(const wxString& descrizione,const wxString& data, const wxStr
 	}
 }
 
-bool Attivita::operator!=(const Attivita& Attivita)
+bool Attivita::operator!=(const Attivita& Attivita) const
 {
 	if (Descrizione.IsSameAs(Attivita.Descrizione) && Data.IsSameAs(Attivita.Data) && OraInizio.IsSameAs(Attivita.OraInizio) && OraFine.IsSameAs(Attivita.OraFine)) {
 		return false;

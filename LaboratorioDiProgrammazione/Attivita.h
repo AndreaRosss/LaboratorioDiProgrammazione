@@ -13,29 +13,30 @@ private:
 	wxString OraInizio;
 	wxString OraFine;
 
+	
+	bool ValiditaOrari(const wxString& a, const wxString& b);
+
 public:
 
 	Attivita(const wxString& Descrizione, const wxString& Data, const wxString& OraInizio, const wxString& OraFine);
 	~Attivita() {};
 
-	bool operator!=(const Attivita& Attivita);
+	bool operator!=(const Attivita& Attivita) const;
 
-	bool ValiditaOrari(const wxString& a, const wxString& b);
-
-	wxString GetData() {
-		return this->Data;
+	wxString GetData() const {
+		return Data;
 	}
 
-	wxString GetDescrizione() {
-		return this->Descrizione;
+	wxString GetDescrizione() const{
+		return Descrizione;
 	}
 
-	wxString GetOraInizio() {
-		return this->OraInizio;
+	wxString GetOraInizio() const{
+		return OraInizio;
 	}
 
-	wxString GetOraFine() {
-		return this->OraFine;
+	wxString GetOraFine() const {
+		return OraFine;
 	}
 
 	void SetData(const wxString& Data) {
@@ -53,6 +54,9 @@ public:
 	void SetOraFine(const wxString& OraFine) {
 		this->OraFine = OraFine;
 	}
+
+	
+
 };
 
 #endif // !UNIT_TESTING_ATTIVITA_H
