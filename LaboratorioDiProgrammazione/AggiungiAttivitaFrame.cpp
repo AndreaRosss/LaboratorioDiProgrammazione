@@ -11,14 +11,17 @@ using namespace std;
 AggiungiAttivitaFrame::AggiungiAttivitaFrame(wxFrame* parent, Registro* registro) : wxFrame(parent , wxID_ANY, "Aggiungi Attivita"), registro(registro) {
 	panel = new wxPanel(this);
 
+	a = new  wxDateTime(0, 0);
+	
+	
 	campo1 = new wxStaticText(panel, wxID_ANY, "Data:", wxPoint(10, 10), wxSize(100, 100));
 	Data = new wxDatePickerCtrl(panel, wxID_ANY, wxDefaultDateTime, wxPoint(50, 10), wxDefaultSize, 4L);
 	
 	campo2 = new wxStaticText(panel, wxID_ANY, "OraInizio:", wxPoint(200, 10), wxSize(100, 100));
-	oraInizio = new wxTimePickerCtrl(panel, wxID_ANY, wxDefaultDateTime, wxPoint(250, 10), wxDefaultSize, wxTP_DEFAULT);
+	oraInizio = new wxTimePickerCtrl(panel, wxID_ANY, a->GetValue(), wxPoint(250, 10), wxDefaultSize, 0L);
 	
 	campo3 = new wxStaticText(panel, wxID_ANY, "OraFine:", wxPoint(350, 10), wxSize(100, 100));
-	oraFine = new wxTimePickerCtrl(panel, wxID_ANY, wxDefaultDateTime, wxPoint(400, 10), wxDefaultSize, 0L);
+	oraFine = new wxTimePickerCtrl(panel, wxID_ANY, a->GetValue(), wxPoint(400, 10), wxDefaultSize, 0L);
 
 	campo4 = new wxStaticText(panel, wxID_ANY, "Descrizione:", wxPoint(10, 50), wxSize(100, 100));
 	SezioneDescrizione = new wxTextCtrl(panel, wxID_ANY, "", wxPoint(10, 75), wxSize(580, 150));

@@ -18,6 +18,7 @@ private:
 
 	Registro* registro;
 	wxPanel* panel;
+	wxDateTime* a;
 	wxStaticText* campo1;
 	wxDatePickerCtrl* Data;
 	wxStaticText* campo2;
