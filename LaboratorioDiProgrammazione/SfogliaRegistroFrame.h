@@ -17,13 +17,16 @@ private:
 	wxArrayString as;
 	wxChoice* choiche;
 	wxListBox* descrizione;
+
 	void OnChoiceChanged(wxCommandEvent& evt);
 
+	wxArrayString KeysToString() const;
+
 public:
-	wxListBox* GetDescrizione() {
+	wxListBox* GetDescrizione() const{
 		return descrizione;
 	}
-	wxChoice* GetChoice() {
+	wxChoice* GetChoice() const{
 		return choiche;
 	}
 };
