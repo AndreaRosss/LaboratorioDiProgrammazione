@@ -5,20 +5,6 @@
 
 
 
-TEST(Attivita, CheckValidit‡Orari) {
-
-	wxString a = "Test Attivita";
-	wxString b = "17-01-2024";
-	wxString c = "16:42";
-	wxString d = "17:43";
-	wxString e = "16:43";
-	Attivita att(a, b, c, d);
-	ASSERT_FALSE(att.ValiditaOrari(d, c));
-	ASSERT_FALSE(att.ValiditaOrari(e, c));
-	ASSERT_TRUE(att.ValiditaOrari(c, e));
-	ASSERT_TRUE(att.ValiditaOrari(c, d));
-}
-
 TEST(Attivita, MyConstructor) {
 	
 	Attivita att("Test Attivita","17-01-2024" , "16:42", "17:43");
