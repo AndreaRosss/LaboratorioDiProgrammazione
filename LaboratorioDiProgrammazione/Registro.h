@@ -17,28 +17,27 @@ private:
 
 	multimap <wxString, Attivita> reg;
 
+	bool CheckKey(const vector<wxString>& v, const wxString& k) const;
+
 public:
+
 	Registro();
 
 	void AggiungiAttivita(const wxString& descrizione, const wxString& data, const wxString& orainizio, const wxString& orafine);
 
-	bool CheckKey(const vector<wxString>& v,const wxString& k);
+	vector<wxString> GetKeys() const;
 
 	void MostraAttivitaSfogliaRegistroFrame(SfogliaRegistroFrame* x);
 
-	vector<wxString> GetKeys();
+	Attivita RicercaAttivitaPerDescrizione(const wxString& x) const;
 
-	wxArrayString GetKeysToString();
+	Attivita RicercaAttivitaPerData(const wxString& x) const;
 
-	Attivita RicercaAttivitaPerDescrizione(const wxString& x);
+	int GetNumeroTotaleAttivita() const;
 
-	Attivita RicercaAttivitaPerData(const wxString& x);
+	int GetNumeroAttivitaDiUnGioro(const wxString& data) const;
 
-	int GetNumeroTotaleAttivita();
-
-	int GetNumeroAttivitaDiUnGioro(const wxString& data);
-
-	void ModificaAttivita(Attivita Attivita);
+	void ModificaAttivita(Attivita& Attivita,const wxString& NuovaDescrizione);
 
 	void CancellaAttivita(Attivita Attivita);
 

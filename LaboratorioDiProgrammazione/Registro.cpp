@@ -17,7 +17,7 @@ void Registro::AggiungiAttivita(const wxString& descrizione,const wxString& data
 
 
 
-bool Registro::CheckKey(const vector<wxString>& v,const wxString& k)
+bool Registro::CheckKey(const vector<wxString>& v,const wxString& k) const
 {
 	for (int i = 0; i < v.size(); i++) {
 		if (k == v[i]) {
@@ -42,7 +42,7 @@ void Registro::MostraAttivitaSfogliaRegistroFrame(SfogliaRegistroFrame* x)
 	}
 }
 
-vector<wxString> Registro::GetKeys()
+vector<wxString> Registro::GetKeys() const
 {
 	vector<wxString> Chiavi;
 	for (auto it = reg.begin(); it != reg.end(); it++) {
@@ -55,21 +55,11 @@ vector<wxString> Registro::GetKeys()
 	return Chiavi;
 }
 
-wxArrayString Registro::GetKeysToString()
-{
-	wxArrayString as;
-	vector<wxString> Chiavi = GetKeys();
-	for (int i = 0; i < Chiavi.size(); i++) {
-		as.Add(Chiavi[i]);
-	}
-	return as;
-}
-
 //TBD: questa funzione verrà utilizzata nel binding di un bottone del MainFrame.
 //sarà lì che posizioneremo il blocco try. Il catche del blocco try aprirà un nuovo frame (ErrorFrame, da implementare)
 //che mostrerà il messaggio con cui è stata creata l'eccezione. Successivamente la finestra che mostra l'Attivita
 // mostrerà l'Attivita Vuota. 
-Attivita Registro::RicercaAttivitaPerDescrizione(const wxString& x)
+Attivita Registro::RicercaAttivitaPerDescrizione(const wxString& x) const
 {
 	for (auto it = reg.begin(); it != reg.end(); it++) {
 		if (it->second.GetDescrizione().Contains(x)) {
@@ -81,7 +71,7 @@ Attivita Registro::RicercaAttivitaPerDescrizione(const wxString& x)
 }
 
 //Aggiungere formato data come suggerimento
-Attivita Registro::RicercaAttivitaPerData(const wxString& x)
+Attivita Registro::RicercaAttivitaPerData(const wxString& x) const
 {
 	for (auto it = reg.begin(); it != reg.end(); it++) {
 		if (it->second.GetData().Contains(x)) {
@@ -92,22 +82,19 @@ Attivita Registro::RicercaAttivitaPerData(const wxString& x)
 	return Attivita("", "", "", "");
 }
 
-int Registro::GetNumeroTotaleAttivita()
+int Registro::GetNumeroTotaleAttivita() const
 {
 	return reg.size();
 }
 
-int Registro::GetNumeroAttivitaDiUnGioro(const wxString& Data)
+int Registro::GetNumeroAttivitaDiUnGioro(const wxString& Data) const
 {
 	return reg.count(Data);
 }
 
-void Registro::ModificaAttivita(Attivita Attivita)
+void Registro::ModificaAttivita(Attivita& Attivita,const wxString& NuovaDescrizione)
 {
-	auto it = reg.begin();
-	while (it != reg.end() && it->second != Attivita) {
-		++it;
-	}
+	Attivita.SetDescrizione(NuovaDescrizione);
 }
 
 void Registro::CancellaAttivita(Attivita Attivita)
